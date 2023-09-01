@@ -229,6 +229,25 @@ def validar_palindromo():
     else:
         print(f"{aux} no es palíndromo.")
 
+def cuanto_tiempo():
+    vel = lee_num_dec("la velocidad en km/h")
+    dis = lee_num_dec("la distancia en metros")
+    temp = (dis/1000)/vel
+    hora = math.trunc(temp)
+    mins = round(((temp-hora)*60))
+    if mins !=0 and hora == 1:
+        print(f"Tomará {hora} hora y {mins} minutos.")
+    elif mins !=0 and hora >= 1:
+        print(f"Tomará {hora} horas y {mins} minutos.")
+    elif mins == 0 and hora == 1:
+        print(f"Tomará {hora} hora.")
+    elif mins == 0 and hora > 1:
+        print(f"Tomará {hora} horas.")
+    elif mins == 0 and hora == 0:
+        print("no tomará nada de tiempo.")
+    else:
+        print(f"Tomará {mins} minutos.")
+
 while True:
     try:
         tipo = int(input("""
@@ -323,26 +342,7 @@ elif tipo == 11:
     incremento_sal()
 
 elif tipo == 12:
-    print("vacio")
-    vel = lee_num_dec("la velocidad en km/h")
-    dis = lee_num_dec("la distancia en metros")
-    temp = (dis/1000)/vel
-    hora = math.trunc(temp)
-    mins = round(((temp-hora)*60))
-    if mins !=0 and hora == 1:
-        print(f"Tomará {hora} hora y {mins} minutos.")
-    elif mins !=0 and hora >= 1:
-        print(f"Tomará {hora} horas y {mins} minutos.")
-    elif mins == 0 and hora == 1:
-        print(f"Tomará {hora} hora.")
-    elif mins == 0 and hora > 1:
-        print(f"Tomará {hora} horas.")
-    elif mins == 0 and hora == 0:
-        print("no tomará nada de tiempo.")
-    else:
-        print(f"Tomará {mins} minutos.")
-
-
+    cuanto_tiempo()
 
 elif tipo == 13:
     n1 = lee_num("un año")

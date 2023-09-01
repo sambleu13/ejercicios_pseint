@@ -19,7 +19,7 @@ def ev_primo(num):
 numero=lee_num("un número entero")
 
 if ev_primo(numero):
-    print(f"{numero} es número primo")
+    print(f"{numero} es número primo.")
 else:
     print(f"{numero} no es número primo.")
 
